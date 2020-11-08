@@ -1,0 +1,13 @@
+// All common stylse is here......
+
+$primary:#F7F7F7;
+$secondary: #ddd;
+$tertiary: #aba;
+
+
+// For same width
+
+@mixin container {
+    padding-left: 5%;
+    padding-right: 5%;
+}

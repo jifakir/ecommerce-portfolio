@@ -1,0 +1,24 @@
+@import '../../../commonStyles';
+
+
+.nav-item {
+    width: 100%;
+    position: relative;
+    padding: 15px;
+    &:hover .hoverable-cat{
+        display: block;
+    }
+    .hoverable-cat {
+        position: absolute;
+        width: 200px;
+        background: $primary;
+        padding: 10px 5px;
+        border-top: 2px solid green;
+        top: 100%;
+        left: 0;
+        display: none;
+        .item{
+            padding: 5px 0;
+        }
+    }
+}

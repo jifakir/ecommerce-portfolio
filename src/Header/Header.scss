@@ -1,0 +1,36 @@
+@import '../commonStyles';
+
+
+.header {
+    width: 100%;
+    height: 100%;
+    box-shadow: 2px 5px 5px 2px rgba($color: #5f5151, $alpha: 0.5),
+                2px 5px 5px 5px rgba($color: #493d3d, $alpha: 0.5), ;
+    .sticky-outer {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid $tertiary;
+        padding: 20px 0;
+        @include container;
+        .logo-wrapper{
+            
+        }
+        .search-account-wrapper{
+            display: flex;
+
+            .search-box{
+
+            }
+            .account{
+                margin-left: 10px;
+            }
+        }
+        
+    }
+    .navigation-wrapper {
+        @include container;
+        display: flex;
+        
+    }
+}
