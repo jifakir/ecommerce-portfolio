@@ -2,7 +2,69 @@
 
 
 .home{
-    .header {
+    width: 100%;
+    @include container;
+    margin-top: 3rem;
+
+    .banner-wrapper {
         width: 100%;
+        position: relative;
+        border-radius: 5px;
+        overflow: hidden;
+        
+        .banner{
+            width: 100%;
+            &::after{
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                background: rgba($color: #000000, $alpha: 0.3);
+            }
+            img{
+                width: 100%;
+                background: cover;
+            }
+        }
+
+        .title-container{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            color: $primary;
+            .title-wrapper{
+                padding: 1rem;
+                padding-top: 15rem;
+                .title{ 
+        
+                }
+                .subtitle{
+                    .subtitle-bold{
+                        font-weight: bold;
+                    }
+                }
+                .btn-order{
+                    width: 200px;
+                    height: 50px;
+                    background: $primary;
+                    border-radius: 10px;
+                    color: grey;
+                    text-align: center;
+                    margin-top: 15px;
+                }
+            }
+        }
     }
+    .collections-container{
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-auto-rows: 300px;
+        gap: 15px;
+        margin-top: 25px;
+    }
+    
 }

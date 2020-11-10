@@ -1,6 +1,12 @@
 @import './commonStyles';
 
-
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+  }
 .ecommerc{
-  
+  width: 100vw;
+  height: 100vh;
 }

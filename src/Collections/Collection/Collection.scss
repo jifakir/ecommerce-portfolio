@@ -1,0 +1,61 @@
+@import '../../commonStyles';
+
+
+
+.collection-wrapper{
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    .collection{
+        width: 100%;
+        position: relative;
+        .img-wrapper{
+            width: 100%;
+            img{
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+            }
+        }
+        .title-container{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            color: $primary;
+            .title-wrapper{
+                width: 100%;
+                height: 100%;
+                position: relative;
+                &:hover{
+                    .title{
+                        bottom: 50%;
+                        transform: translateX(-50%);
+                    }
+                    .btn-forward{
+                        display: block;
+                        opacity: 1;
+                    }
+                }
+                .title{
+                    position: absolute;
+                    left: 50%;
+                    bottom: 10px;
+                    transform: translateX(-50%);
+                    transition: all 500ms ease;
+                }
+                .btn-forward{
+                    position: absolute;
+                    bottom: 10px;
+                    left: 50%;
+                    transition: all 500ms ease-out;
+                    transform: translateX(-50%);
+                    opacity: 0;
+                    display: none;
+                }
+            }
+        }
+    }
+}

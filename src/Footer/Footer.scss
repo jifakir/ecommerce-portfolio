@@ -1,0 +1,30 @@
+@import '../commonStyles';
+
+
+.footer {
+    width: 100%;
+    @include container;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $tertiary;
+    border-top: 1px solid $secondary;
+    .copyright{
+        p{
+            a{
+                color: green;
+                text-decoration: none;
+            }
+        }
+    }
+    .icon-wrapper{
+        display: flex;
+        .icon{
+            padding: 5px 10px;
+            color: $tertiary;
+            font-size: 1.2rem;
+        }
+    }
+}

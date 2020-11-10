@@ -4,8 +4,8 @@
 .header {
     width: 100%;
     height: 100%;
-    box-shadow: 2px 5px 5px 2px rgba($color: #5f5151, $alpha: 0.5),
-                2px 5px 5px 5px rgba($color: #493d3d, $alpha: 0.5), ;
+    z-index: 4;
+    box-shadow: inset 2px 2px 5px red;
     .sticky-outer {
         width: 100%;
         display: flex;
@@ -13,17 +13,47 @@
         border-bottom: 1px solid $tertiary;
         padding: 20px 0;
         @include container;
+
         .logo-wrapper{
-            
+            width: 100px;
+            height: 100%;
+           font-weight: 700;
+           font-family: 'Courier New', Courier, monospace; 
+           display: flex;
+           align-items: center;
+           img{
+               width: 100%;
+               max-height: 100%;
+           }
         }
+
         .search-account-wrapper{
             display: flex;
 
             .search-box{
-
+                position: relative;
+                .icon{
+                    position: absolute;
+                    top: 50%;
+                    left: 10px;
+                    transform: translateY(-50%);
+                    font-size: 1.2rem;
+                    color: #f1f1f1;
+                }
+                .input-field{
+                    border: 1px solid #f1f1f1;
+                    padding: 10px 30px;
+                    
+                    &:focus{
+                        border: 1px solid #3f3b3b;
+                    }
+                }
+                
             }
             .account{
                 margin-left: 10px;
+                display: flex;
+                align-items: center;
             }
         }
         
@@ -31,6 +61,10 @@
     .navigation-wrapper {
         @include container;
         display: flex;
+        overflow-x: scroll;
+        @media (min-width: 650px) {
+            overflow: visible;
+        }
         
     }
 }
