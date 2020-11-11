@@ -1,20 +1,16 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import './NavItem.scss';
 
 
 
 const NavItem = () => {
-
+    const id = Array(5).fill().map((n, i) => i);
     return (
         <div className="nav-item">
-            NavItem
+            Navigation
             <div className="hoverable-cat">
-                <div className="item">Item</div>
-                <div className="item">Item</div>
-                <div className="item">Item</div>
-                <div className="item">Item</div>
-                <div className="item">Item</div>
+                {id.map((n, i) => <Link className='item' to={`/collection/${i}`}>Item</Link>)}
             </div>
         </div>
     )

@@ -5,7 +5,7 @@
     width: 100%;
     height: 100%;
     z-index: 4;
-    box-shadow: inset 2px 2px 5px red;
+    box-shadow: 2px 2px 5px rgba($color: $tertiary, $alpha: 1.0);
     .sticky-outer {
         width: 100%;
         display: flex;
@@ -38,22 +38,37 @@
                     left: 10px;
                     transform: translateY(-50%);
                     font-size: 1.2rem;
-                    color: #f1f1f1;
+                    color: $tertiary;
                 }
                 .input-field{
-                    border: 1px solid #f1f1f1;
+                    width: 300px;
+                    border: 1px solid rgba($color: $tertiary, $alpha: 0.6);
+                    border-style: solid;
                     padding: 10px 30px;
+                    border-radius: 0.5rem;
+                    font-size: 1rem;
+                    color: $tertiary;
+                    background: $primary;
                     
+                    &::placeholder{
+                        color: $tertiary;
+                    }
                     &:focus{
-                        border: 1px solid #3f3b3b;
+                        border: 1px solid $tertiary;
                     }
                 }
                 
             }
             .account{
-                margin-left: 10px;
+                margin-left: 20px;
                 display: flex;
                 align-items: center;
+                color: $tertiary;
+                font-size: 2rem;
+                cursor: pointer;
+                &:hover {
+                    color: rgba($color: $tertiary, $alpha: 0.5);
+                }
             }
         }
         

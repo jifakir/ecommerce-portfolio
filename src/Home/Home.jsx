@@ -35,15 +35,18 @@ const Home = () => {
                 <Collection />
                 <Collection />
                 <Collection />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
+            </div>
+            <div className="product-wrapper">
+                <h1>Featured Product</h1>
+                <div className="product-list">
+                    {Array(30).fill().map(() => <ProductCard />)}
+                </div>
+            </div>
+            <div className="product-wrapper">
+                <h1>Latest Product</h1>
+                <div className="product-list">
+                    {Array(30).fill().map(() => <ProductCard />)}
+                </div>
             </div>
         </div>
     )
