@@ -1,5 +1,5 @@
-import React from 'react';
-import { FaShoppingBag } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { FaShoppingBag, FaWindowClose } from 'react-icons/fa';
 
 import './Cart.scss';
 import Product from './Product/Product';
@@ -7,10 +7,13 @@ import Product from './Product/Product';
 
 const Cart = () => {
 
+    const [isCartOpen, setCartOpen] = useState(false);
 
-    return (
-        <div className="cart">
-            <div className="short-cart">
+    const cartOpenHandler = () => {
+        setCartOpen(!isCartOpen);
+    }
+    const shortCart = (
+        <div className="short-cart" onClick={cartOpenHandler}>
                 <div className="short-cart-wrapper">
                     <div className="left">
                         <div className="icon">
@@ -27,10 +30,14 @@ const Cart = () => {
                     </div>
                 </div>
             </div>
+    );
+
+    const fullCart = (
+        <div className="cart-wrapper">
             <header className="cart-header">
                 <h4>Cart</h4>
-                <h4 className="cross">
-                    X
+                <h4 className="cross" onClick={cartOpenHandler}>
+                    <FaWindowClose />
                 </h4>
             </header>
             <div className="total-amount-wrapper">
@@ -38,17 +45,24 @@ const Cart = () => {
                     Total Amount
                 </h3>
             </div>
-           <div className="products">
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-           </div>
-           <div className="checkout">
-               Proceed to Checkout
-           </div>
+            <div className="products">
+                    <Product />
+                    <Product />
+                    <Product />
+                    <Product />
+                    <Product />
+                    <Product />
+            </div>
+            <div className="checkout">
+                Proceed to Checkout
+            </div>
+        </div>
+    )
+    return (
+        <div className="cart">
+            {
+                isCartOpen? fullCart : shortCart
+            }
         </div>
     )
 }

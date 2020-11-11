@@ -3,6 +3,7 @@ import ProductCard from '../UI/Card/ProductCard/ProductCard';
 import Collection from '../Collections/Collection/Collection';
 
 import './Home.scss';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
 
@@ -16,14 +17,16 @@ const Home = () => {
                 <div className="title-container">
                     <div className="title-wrapper">
                         <h1 className="title">
-                            Stay home, <br/>
+                            Stay Home, <br/>
                             & Get your daily need's
                         </h1>
                         <h5 className="subtitle">
                             Start your daily shipping with <span className='subtitle-bold'>Jamcart</span>
                         </h5>
                         <div className="btn-order">
-                            Order Now
+                            <a href='#featured' className='link'>
+                                <p>Order Now &#8594;</p>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -36,7 +39,7 @@ const Home = () => {
                 <Collection />
                 <Collection />
             </div>
-            <div className="product-wrapper">
+            <div id='featured' className="product-wrapper">
                 <h1>Featured Product</h1>
                 <div className="product-list">
                     {Array(30).fill().map(() => <ProductCard />)}

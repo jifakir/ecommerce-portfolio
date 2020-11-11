@@ -4,14 +4,19 @@
 
 .cart {
     width: 100%;
-    min-height: 100vh;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
     .short-cart {
         width: 80%;
         margin: auto;
         padding: 15px;
         border-radius: 0.5rem;
         background: black;
-        color: rgba(255, 255, 255, 0.904);
+        margin-bottom: 10vh;
+        color: $tertiary;
+        transition: all 500ms ease-in-out;
         .short-cart-wrapper {
             display: flex;
             justify-content: space-between;
@@ -31,37 +36,50 @@
             }
         }
     }
-    .cart-header {
-        padding: 15px;
-        width: 60%;
-        margin: auto;
-        display: flex;
-        justify-content: space-between;
-    }
-    .total-amount-wrapper {
-        width: 100%;
-        background: #F7F7F7;
-        .total-amount{
+    .cart-wrapper{
+        height: 100vh;
+        background: #ffffff;
+        transition: all 500ms ease-in-out;
+        .cart-header {
             padding: 15px;
             width: 60%;
             margin: auto;
+            display: flex;
+            justify-content: space-between;
+            h4{
+                font-size: 1.5rem;
+            }
+            .cross{
+                cursor: pointer;
+                padding:5px;
+            }
         }
-    }
-    .products {
-        width: 60%;
-        height: 60vh;
-        margin: auto;
-        overflow-y: scroll;
-    }
-    .checkout{
-        width: 60%;
-        margin:10px auto;
-        margin-top: 50px;
-        padding: 25px 0;
-        background: #0a0a00;
-        border-radius: 0.5rem;
-        color: #dddddd;
-        text-align: center;
-        font-weight: 700;
+        .total-amount-wrapper {
+            width: 100%;
+            background: #F7F7F7;
+            box-shadow: 0 1px 2px #aaa8a8d2;
+            .total-amount{
+                padding: 15px;
+                width: 60%;
+                margin: auto;
+            }
+        }
+        .products {
+            width: 60%;
+            height: 50vh;
+            margin: auto;
+            overflow-y: scroll;
+        }
+        .checkout{
+            width: 60%;
+            margin:10px auto;
+            margin-top: 5rem;
+            padding: 25px 0;
+            background: #0a0a00;
+            border-radius: 0.5rem;
+            color: #dddddd;
+            text-align: center;
+            font-weight: 700;
+        }
     }
 }

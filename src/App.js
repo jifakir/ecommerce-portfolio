@@ -19,6 +19,7 @@ function App() {
               <Route path='/collection/:id' exact>
                 <Collections />
               </Route>
+          <Cart />
           <Footer />
         </header>
       </div>
