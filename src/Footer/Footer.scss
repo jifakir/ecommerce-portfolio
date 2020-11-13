@@ -25,6 +25,9 @@
             padding: 5px 10px;
             color: $tertiary;
             font-size: 1.2rem;
+            .instagram:hover {
+                color: red;
+            }
         }
     }
 }

@@ -15,13 +15,13 @@ const Footer = () => {
                 </p>
             </div>
             <div className="icon-wrapper">
-                <div className="icon">
+                <div className="icon facebook">
                     <FaFacebookSquare />
                 </div>
-                <div className="icon">
+                <div className="icon youtube">
                     <FaYoutube />
                 </div>
-                <div className="icon">
+                <div className="icon instagram">
                     <FaInstagram />
                 </div>
             </div>

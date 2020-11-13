@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductCard from '../UI/Card/ProductCard/ProductCard';
-import Collection from '../Collections/Collection/Collection';
+import Collection from './Collection/Collection';
 
 import './Home.scss';
 import { Link } from 'react-router-dom';
