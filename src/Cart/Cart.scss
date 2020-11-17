@@ -3,19 +3,22 @@
 
 
 .cart {
-    width: 100%;
     position: fixed;
-    left: 0;
-    bottom: 0;
-    z-index: 10;
+    width: 100vw;
+    bottom: 10vh;
+    z-index: 500;
     .short-cart {
-        width: 80%;
+        width: 80vw;
         margin: auto;
-        padding: 15px;
+        bottom: 10vh;
+        padding: 10px 15px;
+        color: #ffffff;
         border-radius: 0.5rem;
-        background: black;
-        margin-bottom: 10vh;
-        color: $tertiary;
+        background-color: rgb(41, 41, 41);
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 12px;
+        cursor: pointer;
+        left: auto;
+        right: auto;
         transition: all 500ms ease-in-out;
         .short-cart-wrapper {
             display: flex;
@@ -38,6 +41,8 @@
     }
     .cart-wrapper{
         height: 100vh;
+        width: 100vw;
+        margin-bottom: -10vh;
         background: #ffffff;
         transition: all 500ms ease-in-out;
         .cart-header {
