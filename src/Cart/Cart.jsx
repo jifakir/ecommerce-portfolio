@@ -14,6 +14,14 @@ const Cart = () => {
 
     const cartOpenHandler = () => {
         setCartOpen(!isCartOpen);
+    };
+
+    const checkoutHandler = () => {
+        return alert("Checkout doesn't available yet")
+    }
+    const deleteCartItem = (index) => {
+        
+        setCart((prevCart) => [...prevCart].filter((v,i)=> i !== index));
     }
     const shortCart = (
         <div className="short-cart" onClick={cartOpenHandler}>
@@ -49,9 +57,9 @@ const Cart = () => {
                 </h3>
             </div>
             <div className="products">
-                    {cart.map((product) => <Product />)}
+                    {cart.map((product, i) => <Product name={i} clicked={()=> deleteCartItem(i)} />)}
             </div>
-            <div className="checkout">
+            <div className="checkout" onClick={checkoutHandler}>
                 Proceed to Checkout
             </div>
         </div>

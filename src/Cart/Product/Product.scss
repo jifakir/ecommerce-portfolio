@@ -9,6 +9,19 @@
         padding: 15px;
         display: flex;
         justify-content: space-between;
+        cursor: pointer;
+        &:hover {
+            .left{
+                .product-img{
+                    &::after{
+                        display: block;
+                    }
+                    .delete-icon{
+                        display: block;
+                    }
+                }
+            }
+        }
         .left {
             display: flex;
             .product-img {
@@ -18,8 +31,7 @@
                 border-radius: 5px;
                 overflow: hidden;
                 position: relative;
-                &:hover{
-                    &::after{
+                &::after{
                         position: absolute;
                         content: '';
                         width: 100%;
@@ -27,11 +39,25 @@
                         top: 0;
                         left: 0;
                         background: rgba($color: #000000, $alpha: 0.5);
+                        display: none;
                     }
-                }
                 img{
                     width: 100%;
                     height: 100%;
+                }
+                .delete-icon{
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                    z-index: 5;
+                    color: $primary;
+                    display: none;
+                    &:active{
+                        color: $tertiary;
+                    }
                 }
             }
             .product-details {
