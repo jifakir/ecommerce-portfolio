@@ -1,10 +1,13 @@
 import React from 'react';
+import { useRouteMatch } from 'react-router-dom';
 import ProductCard from '../UI/Card/ProductCard/ProductCard';
 
 import './Collections.scss';
 
 
 const Collections = () => {
+
+    const item = useRouteMatch();
 
     return (
         <div className="collections">
@@ -17,20 +20,14 @@ const Collections = () => {
                         <div className="title-container">
                                 <div className="title-wrapper">
                                     <h2 className="title">
-                                        Oil
+                                        {item.params.id}
                                     </h2>
                                 </div>
                         </div>
                     </div>
                 </div>
                 <div className="products">
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
+                    {Array(10).fill().map((v,i)=><ProductCard />)}
                 </div>
             </div>
         </div>

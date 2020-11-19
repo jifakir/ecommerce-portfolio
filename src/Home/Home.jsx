@@ -1,12 +1,9 @@
 import React from 'react';
 import ProductCard from '../UI/Card/ProductCard/ProductCard';
 import Collection from './Collection/Collection';
-
 import './Home.scss';
-import { Link } from 'react-router-dom';
 
 const Home = () => {
-
 
     return (
         <div className="home">
@@ -32,12 +29,10 @@ const Home = () => {
                 </div>
             </div>
             <div className="collections-container">
-                <Collection />
-                <Collection />
-                <Collection />
-                <Collection />
-                <Collection />
-                <Collection />
+                {
+                    Array(6).fill().map((v, i) => <Collection id={i} />)
+                }
+                
             </div>
             <div id='featured' className="product-wrapper">
                 <h1>Featured Product</h1>

@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import './Collection.scss';
 
 
-const Collection = () => {
+const Collection = ({id}) => {
 
     return (
         <div className="collection-wrapper">
-                <Link to='/collection/id'>
+                <Link to={`/collection/${id}`}>
                     <div className="collection">
                         <div className="img-wrapper">
                                 <img src="https://images.unsplash.com/photo-1510808052173-32bd048cc8f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Ctg Pic"/>

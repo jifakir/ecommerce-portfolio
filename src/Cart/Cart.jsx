@@ -6,8 +6,10 @@ import './Cart.scss';
 import Product from './Product/Product';
 
 
-const Cart = () => {
+const Cart = (props) => {
 
+    console.log(props);
+    
     const [isCartOpen, setCartOpen] = useState(false);
 
     const [cart, setCart] = useContext(CartContext);
@@ -57,7 +59,7 @@ const Cart = () => {
                 </h3>
             </div>
             <div className="products">
-                    {cart.map((product, i) => <Product name={i} clicked={()=> deleteCartItem(i)} />)}
+                    {cart.map((product, i) => <Product key={i} name={i} clicked={()=> deleteCartItem(i)} />)}
             </div>
             <div className="checkout" onClick={checkoutHandler}>
                 Proceed to Checkout
