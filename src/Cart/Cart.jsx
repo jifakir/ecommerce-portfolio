@@ -1,19 +1,21 @@
 import React, { useContext, useState } from 'react';
 import { FaShoppingBag, FaWindowClose } from 'react-icons/fa';
 import { CartContext } from '../Context/CartContext';
+import { DataContext } from '../Context/DataContext';
 
 import './Cart.scss';
 import Product from './Product/Product';
 
 
 const Cart = (props) => {
-
-    console.log(props);
     
     const [isCartOpen, setCartOpen] = useState(false);
 
     const [cart, setCart] = useContext(CartContext);
+    const [data, setData] = useContext(DataContext);
 
+    console.log(data);
+    console.log(cart);
     const cartOpenHandler = () => {
         setCartOpen(!isCartOpen);
     };
@@ -54,12 +56,15 @@ const Cart = (props) => {
                 </h4>
             </header>
             <div className="total-amount-wrapper">
-                <h3 className="total-amount">
-                    Total Amount
-                </h3>
+                <div className="total-amount">
+                    <h3>
+                        Total Amount:
+                    </h3>
+                    <h3>{cart.map((e) => e.price).reduce((a, d) => a+d, 0)}</h3>
+                </div>
             </div>
             <div className="products">
-                    {cart.map((product, i) => <Product key={i} name={i} clicked={()=> deleteCartItem(i)} />)}
+                    {cart.map((e,i) => <Product item={e} clicked={()=> deleteCartItem(i)} />)}
             </div>
             <div className="checkout" onClick={checkoutHandler}>
                 Proceed to Checkout

@@ -3,24 +3,26 @@ import { MdDelete } from 'react-icons/md';
 import './Product.scss';
 
 
-const Product = ({clicked, name}) => {
+const Product = ({clicked, item}) => {
+
+    const {image, price, title} = item;
 
     return (
         <div className="product">
             <div className="product-wrapper">
                 <div className="left">
                     <div className="product-img">
-                        <img src="https://cdn.shopify.com/s/files/1/0766/1101/products/Broccoli.JPG?v=1425932065" alt="Brocolli"/>
+                        <img src={image} alt="Brocolli"/>
                         <div className="delete-icon" onClick={clicked}>
                             <MdDelete />
                         </div>
                     </div>
                     <div className="product-details">
                         <h5 className="product-name">
-                            {name}
+                            {title}
                         </h5>
                         <h5 className="product-price">
-                            Price
+                            {price}
                         </h5>
                     </div>
                 </div>

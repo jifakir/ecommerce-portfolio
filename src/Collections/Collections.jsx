@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useRouteMatch } from 'react-router-dom';
+import { DataContext } from '../Context/DataContext';
 import ProductCard from '../UI/Card/ProductCard/ProductCard';
 
 import './Collections.scss';
@@ -8,7 +9,7 @@ import './Collections.scss';
 const Collections = () => {
 
     const item = useRouteMatch();
-
+    const [data, setData] = useContext(DataContext);
     return (
         <div className="collections">
             <div className="container">
@@ -27,7 +28,7 @@ const Collections = () => {
                     </div>
                 </div>
                 <div className="products">
-                    {Array(10).fill().map((v,i)=><ProductCard />)}
+                    {data ? data.map((e, i) => <ProductCard key={i} item={e} />):'Product is loading...'}
                 </div>
             </div>
         </div>

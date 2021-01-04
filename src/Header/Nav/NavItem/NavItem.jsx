@@ -10,7 +10,7 @@ const NavItem = () => {
         <div className="nav-item">
             Navigation
             <div className="hoverable-cat">
-                {id.map((n, i) => <Link className='item' to={`/collection/${i}`}>Item</Link>)}
+                {id.map((n, i) => <Link key={i} className='item' to={`/collection/${i}`}>Item</Link>)}
             </div>
         </div>
     )

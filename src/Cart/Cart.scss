@@ -64,6 +64,9 @@
             background: #F7F7F7;
             box-shadow: 0 1px 2px #aaa8a8d2;
             .total-amount{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
                 padding: 15px;
                 width: 60%;
                 margin: auto;

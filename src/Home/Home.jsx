@@ -1,15 +1,21 @@
-import React from 'react';
+import React, { useContext} from 'react';
+import { CartContext } from '../Context/CartContext';
+import { DataContext } from '../Context/DataContext';
 import ProductCard from '../UI/Card/ProductCard/ProductCard';
 import Collection from './Collection/Collection';
 import './Home.scss';
 
 const Home = () => {
 
+    const [data, setData] = useContext(DataContext);
+    console.log(data);
+
+
     return (
         <div className="home">
             <div className="banner-wrapper">
                 <div className="banner">
-                    <img src="https://images.prismic.io/jamcart/53362f6b-a9fc-4cfe-81d8-45d7de33ebba_home-banner.png" alt="Banner"/>
+                    <img src={null} alt="Banner"/>
                 </div>
                 <div className="title-container">
                     <div className="title-wrapper">
@@ -30,20 +36,20 @@ const Home = () => {
             </div>
             <div className="collections-container">
                 {
-                    Array(6).fill().map((v, i) => <Collection id={i} />)
+                    data ? data.map((e, i) => <ProductCard key={i} item={e} />):'Product is loading...'
                 }
                 
             </div>
             <div id='featured' className="product-wrapper">
                 <h1>Featured Product</h1>
                 <div className="product-list">
-                    {Array(30).fill().map(() => <ProductCard />)}
+                    {data ? data.map((e, i) => <ProductCard key={i} item={e} />):'Product is loading...'}
                 </div>
             </div>
             <div className="product-wrapper">
                 <h1>Latest Product</h1>
                 <div className="product-list">
-                    {Array(30).fill().map(() => <ProductCard />)}
+                    {data ? data.map((e, i) => <ProductCard key={i} item={e} />):'Product is loading...'}
                 </div>
             </div>
         </div>
