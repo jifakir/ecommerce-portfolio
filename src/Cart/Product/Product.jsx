@@ -22,7 +22,7 @@ const Product = ({clicked, item}) => {
                             {title}
                         </h5>
                         <h5 className="product-price">
-                            {price}
+                            $ {price}
                         </h5>
                     </div>
                 </div>

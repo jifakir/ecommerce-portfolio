@@ -19,7 +19,6 @@
         cursor: pointer;
         left: auto;
         right: auto;
-        transition: all 500ms ease-in-out;
         .short-cart-wrapper {
             display: flex;
             justify-content: space-between;
@@ -44,7 +43,6 @@
         width: 100vw;
         margin-bottom: -10vh;
         background: #ffffff;
-        transition: all 500ms ease-in-out;
         .cart-header {
             padding: 15px;
             width: 60%;

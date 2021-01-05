@@ -17,8 +17,10 @@ const ProductCard = ({item}) => {
                 <img src={image} alt={title}/>
                 <i className="bucket-icon" onClick={()=> setCart(e => [...e, item])}><MdShoppingBasket /></i>
             </div>
-            <h2 className="product-price">{price}</h2>
-            <h5 className="product-name">{title}<span className="quantity">100g</span></h5>
+            <div className="desc-wrapper">
+                <h2 className="product-price">$ {price}</h2>
+                <h5 className="product-name">{title}<span className="quantity">100g</span></h5>
+            </div>
         </div>
     )
 }

@@ -3,18 +3,22 @@
 
 .home{
     width: 100%;
+    height: auto;
     @include container;
     padding-top: 3rem;
     margin-bottom: 3rem;
     background: $primary;
     .banner-wrapper {
         width: 100%;
+        height: 300px;
         position: relative;
         border-radius: 5px;
         overflow: hidden;
         
         .banner{
             width: 100%;
+            height: 100%;
+            position: relative;
             &::after{
                 position: absolute;
                 content: '';
@@ -26,7 +30,8 @@
             }
             img{
                 width: 100%;
-                background: cover;
+                height: 100%;
+                object-fit: cover;
             }
         }
 
@@ -40,7 +45,10 @@
             .title-wrapper{
                 height: 100%;
                 padding-left: 4rem;
-                padding-top: 15rem;
+                padding-top: 2rem;
+                // @media (min-width:900px) {
+
+                // }
                 .title{ 
                     letter-spacing: 1px;
                 }
@@ -75,12 +83,13 @@
     .collections-container{
         width: 100%;
         display: grid;
-        grid-template-columns: auto;
+        grid-template-columns: repeat(2, 1fr);
         gap: 15px;
         margin-top: 25px;
-        @media screen {
-            grid-template-columns: repeat(3, 1fr);
+        @media (min-width: 900px) {
+            grid-template-columns: repeat(5, 1fr);
         }
+        
     }
     .product-wrapper {
         margin-top: 50px;
