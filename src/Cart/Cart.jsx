@@ -14,8 +14,6 @@ const Cart = (props) => {
     const [cart, setCart] = useContext(CartContext);
     const [data, setData] = useContext(DataContext);
 
-    console.log(data);
-    console.log(cart);
     const cartOpenHandler = () => {
         setCartOpen(!isCartOpen);
     };
@@ -64,7 +62,7 @@ const Cart = (props) => {
                 </div>
             </div>
             <div className="products">
-                    {cart.map((e,i) => <Product item={e} clicked={()=> deleteCartItem(i)} />)}
+                    {cart.map((e,i) => <Product key={i} item={e} clicked={()=> deleteCartItem(i)} />)}
             </div>
             <div className="checkout" onClick={checkoutHandler}>
                 Proceed to Checkout

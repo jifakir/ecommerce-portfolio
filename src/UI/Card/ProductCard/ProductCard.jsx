@@ -10,12 +10,14 @@ const ProductCard = ({item}) => {
     const {title, image, price} = item;
     
     const [cart, setCart] = useContext(CartContext);
-
+    
+    let hasItemInCart = cart.find(e=> e.id === item.id);
+    
     return (
         <div className="product-card">
             <div className="img-wrapper">
                 <img src={image} alt={title}/>
-                <i className="bucket-icon" onClick={()=> setCart(e => [...e, item])}><MdShoppingBasket /></i>
+                <i className={hasItemInCart ? 'bucket-icon carted-style':'bucket-icon'} onClick={()=> setCart(prev => [...prev, item])}><MdShoppingBasket /></i>
             </div>
             <div className="desc-wrapper">
                 <h2 className="product-price">$ {price}</h2>
